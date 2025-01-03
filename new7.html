@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scholarship Finder & About Section</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://i.ibb.co/TTf74xx/photo-2024-12-22-23-31-05.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 30px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    select, label {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    /* Toggle Button */
+    .toggle-btn {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      width: 10vw; /* Makes the width 1/10th of the viewport */
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 5px; /* Reduce padding to fit smaller width */
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px; /* Adjust font size for a smaller button */
+      text-align: center;
+      z-index: 1000;
+    }
+    .toggle-btn:hover {
+      background: #0056b3;
+    }
+
+    /* About Section */
+    .about-section {
+      display: none;
+      padding: 20px;
+      border-radius: 5px;
+      background: #f4f4f4;
+      margin: 20px auto;
+      max-width: 600px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+    .about-section h2 {
+      text-align: left;
+      font-weight: bold;
+      text-decoration: underline;
+      color: #333;
+      margin-top: 20px;
+    }
+    .about-section ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .about-section li {
+      margin: 5px 0;
+      padding-left: 10px;
+      font-weight: normal;
+      color: #333;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 500px;
+      text-align: center;
+    }
+    .close-btn {
+      background: #FF5252;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .close-btn:hover {
+      background: #E53935;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- About Toggle Button -->
+  <button class="toggle-btn" onclick="toggleInstructions()">About</button>
+
+  <!-- About Section -->
+  <div id="instructions" class="about-section">
+    <h2>Personal Details</h2>
+    <ul>
+      <li>Name: Anuj Uikey</li>
+      <li>Father's Name: Mr. Mannu Lal Uikey</li>
+      <li>Mother's Name: Mrs. Rajkumari Uikey</li>
+      <li>Grandfather's Name: Mr. Charanlal Uikey</li>
+      <li>Grandmother's Name: Kamla Bai Uikey</li>
+      <li>Father's Occupation: Auto Driver</li>
+      <li>Mother's Occupation: Housewife</li>
+    </ul>
+
+    <h2>My Coding Journey</h2>
+    <ul>
+      <li>CodeYogi Institute Introduced Me to Coding</li>
+      <li>Started Learning Coding in June 2024</li>
+      <li>Languages Learned: HTML, CSS, JavaScript</li>
+    </ul>
+
+    <h2>Additional Achievements</h2>
+    <ul>
+      <li>Gained Skills in Excel and Word</li>
+    </ul>
+
+    <h2>Future Plans</h2>
+    <ul>
+      <li>Want to become a Software Engineer</li>
+      <li>Aspiration: Coding</li>
+      <li>Goal: Achieve this for my Family</li>
+    </ul>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <h1>Scholarship Finder</h1>
+    <p>Welcome to the Scholarship Finder! Use the form below to find scholarships tailored to your education level, gender, and category.</p>
+    <form>
+      <label for="educationLevel">Select Education Level:</label>
+      <select id="educationLevel">
+        <option value="Select Class">Select</option>
+        <option value="Class 8">Class 8</option>
+        <option value="Class 9-10">Class 9-10</option>
+        <option value="Class 11-12">Class 11-12</option>
+        <option value="UG">Undergraduate</option>
+        <option value="PG">Postgraduate</option>
+        <option value="PhD">PhD</option>
+      </select>
+
+      <label for="gender">Select Gender:</label>
+      <select id="gender">
+        <option value="Select Gender">Select</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+
+      <label for="caste">Select Caste:</label>
+      <select id="caste">
+        <option value="Select">Select Caste</option>
+        <option value="General">General</option>
+        <option value="OBC">OBC</option>
+        <option value="SC">SC</option>
+        <option value="ST">ST</option>
+      </select>
+
+      <button type="button" onclick="findScholarships()">Find Scholarships</button>
+    </form>
+  </div>
+
+  <!-- Modal -->
+  <div id="resultModal" class="modal">
+    <div class="modal-content">
+      <h2>Available Scholarships</h2>
+      <ul id="scholarshipList"></ul>
+      <button class="close-btn" onclick="goBack()">Back</button>
+    </div>
+  </div>
+
+  <script>
+    const scholarships = [
+      {
+        name: "Pre-Matric Scholarship",
+        eligibility: "Class 9-10, income ≤ Rs. 1 lakh",
+        benefits: "Tuition, books, educational expenses",
+        link: "https://scholarship.up.gov.in/"
+      },
+      {
+        name: "Post-Matric Scholarship",
+        eligibility: "Class 11-12, UG, PG, Diploma, income ≤ Rs. 2 lakh",
+        benefits: "Tuition, academic expenses, maintenance",
+        link: "https://scholarship.up.gov.in/"
+      },
+      {
+        name: "Dashmottar Scholarship",
+        eligibility: "UG, PG, PhD",
+        benefits: "Academic fees, living expenses",
+        link: "https://scholarship.up.gov.in/"
+      },
+      {
+        name: "NMMS",
+        eligibility: "Class 8, income ≤ Rs. 1.5 lakh, ≥55% marks",
+        benefits: "Rs. 12,000 per annum",
+        link: "https://scholarships.gov.in/"
+      }
+    ];
+
+    function findScholarships() {
+      const educationLevel = document.getElementById("educationLevel").value;
+      const gender = document.getElementById("gender").value;
+      const caste = document.getElementById("caste").value;
+
+      const filteredScholarships = scholarships.filter(scholarship => {
+        return (
+          scholarship.eligibility.toLowerCase().includes(educationLevel.toLowerCase()) &&
+          (gender === "Female" || !scholarship.eligibility.toLowerCase().includes("females only"))
+        );
+      });
+
+      const scholarshipList = document.getElementById("scholarshipList");
+      scholarshipList.innerHTML = "";
+
+      if (filteredScholarships.length > 0) {
+        filteredScholarships.forEach(scholarship => {
+          const li = document.createElement("li");
+          li.innerHTML = `<strong>${scholarship.name}</strong>: ${scholarship.benefits} 
+          <a href="${scholarship.link}" target="_blank">Apply Here</a>`;
+          scholarshipList.appendChild(li);
+        });
+      } else {
+        scholarshipList.innerHTML = "<li>No scholarships available for your selection.</li>";
+      }
+
+      document.getElementById("resultModal").style.display = "flex";
+    }
+
+    function goBack() {
+      document.getElementById("resultModal").style.display = "none";
+    }
+
+    function toggleInstructions() {
+      const instructions = document.getElementById('instructions');
+      instructions.style.display = instructions.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
